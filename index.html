@@ -1,1 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Portfolio of Anchal Shetty, BCA student and aspiring software developer from Kundapura, Karnataka." />
+<title>Anchal Shetty — BCA Student & Aspiring Software Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14171F;
+    --paper:#F6F5F1;
+    --paper-dim:#EDEBE4;
+    --slate:#5B6472;
+    --teal:#1F6F64;
+    --teal-deep:#164F47;
+    --coral:#F15B4C;
+    --error:#B3261E;
+    --line: rgba(20,23,31,0.10);
+    --max: 780px;
+    --nav-h: 60px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', system-ui, sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--teal-deep);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:2px solid var(--coral); outline-offset:3px;
+  }
 
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--teal-deep);
+  }
+
+  /* NAVBAR */
+  .navbar{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,245,241,0.92);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--max); margin:0 auto; padding:0 28px;
+    height:var(--nav-h);
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{
+    font-family:'Fraunces', serif;
+    font-weight:600; font-size:19px;
+    color:var(--ink); text-decoration:none;
+  }
+  .nav-links{
+    display:flex; gap:26px; list-style:none; margin:0; padding:0;
+  }
+  .nav-links a{
+    font-size:14.5px; font-weight:500;
+    color:var(--slate); text-decoration:none;
+    padding:6px 0;
+    border-bottom:2px solid transparent;
+  }
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links a.active{color:var(--teal-deep); border-bottom-color:var(--teal);}
+  .nav-toggle{
+    display:none;
+    background:none; border:1px solid var(--line); border-radius:8px;
+    padding:8px 12px; font:inherit; font-size:14px; font-weight:500;
+    color:var(--ink); cursor:pointer;
+  }
+
+  @media (max-width:640px){
+    .nav-toggle{display:block;}
+    .nav-links{
+      display:none;
+      position:absolute; top:var(--nav-h); left:0; right:0;
+      flex-direction:column; gap:0;
+      background:var(--paper);
+      border-bottom:1px solid var(--line);
+      padding:8px 28px 16px;
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{display:block; padding:12px 0; border-bottom:1px solid var(--line);}
+    .nav-links li:last-child a{border-bottom:none;}
+    .nav-links a.active{border-bottom-color:var(--line);}
+  }
+
+  /* HERO */
+  header.hero{
+    padding:88px 0 64px;
+    border-bottom:1px solid var(--line);
+  }
+  .status{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--teal-deep);
+    background:var(--paper-dim);
+    border:1px solid var(--line);
+    padding:8px 14px 8px 12px;
+    border-radius:100px;
+  }
+  .pulse-dot{
+    position:relative;
+    width:8px; height:8px;
+    border-radius:50%;
+    background:var(--coral);
+    flex-shrink:0;
+  }
+  .pulse-dot::after{
+    content:'';
+    position:absolute;
+    inset:-6px;
+    border-radius:50%;
+    border:1.5px solid var(--coral);
+    animation:pulse 2.2s ease-out infinite;
+  }
+  @keyframes pulse{
+    0%{transform:scale(0.5); opacity:0.9;}
+    100%{transform:scale(2.1); opacity:0;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .pulse-dot::after{animation:none; display:none;}
+    html{scroll-behavior:auto;}
+  }
+  .name{
+    font-family:'Fraunces', serif;
+    font-optical-sizing:auto;
+    font-weight:600;
+    font-size:clamp(40px, 7vw, 64px);
+    line-height:1.05;
+    margin:22px 0 8px;
+    letter-spacing:-0.01em;
+  }
+  .role{
+    font-size:18px;
+    color:var(--slate);
+    margin:0 0 28px;
+    max-width:520px;
+  }
+  .hero-actions{display:flex; flex-wrap:wrap; gap:12px;}
+  .btn{
+    display:inline-block;
+    font:inherit; font-size:15px; font-weight:600;
+    padding:12px 22px;
+    border-radius:10px;
+    text-decoration:none;
+    cursor:pointer;
+    border:1.5px solid var(--teal-deep);
+  }
+  .btn-primary{background:var(--teal-deep); color:#fff;}
+  .btn-primary:hover{background:var(--teal);}
+  .btn-ghost{background:transparent; color:var(--teal-deep);}
+  .btn-ghost:hover{background:var(--paper-dim);}
+
+  /* SECTIONS */
+  section{
+    padding:56px 0;
+    border-bottom:1px solid var(--line);
+    scroll-margin-top:var(--nav-h);
+  }
+  section:last-of-type{border-bottom:none;}
+  h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:26px;
+    margin:8px 0 28px;
+  }
+
+  /* ABOUT */
+  .about-text{font-size:16.5px; max-width:600px; color:#333844; margin:0 0 16px;}
+
+  /* SKILLS */
+  .skill-groups{display:flex; flex-direction:column; gap:22px;}
+  .skill-group-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--slate);
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    margin-bottom:10px;
+  }
+  .tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{
+    font-size:14px;
+    padding:7px 13px;
+    border-radius:8px;
+    background:#fff;
+    border:1px solid var(--line);
+    color:var(--ink);
+  }
+
+  /* PROJECTS GALLERY */
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:18px;
+  }
+  .project-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px;
+    display:flex; flex-direction:column;
+  }
+  .project-card h3{
+    font-family:'Fraunces', serif;
+    font-size:20px; font-weight:600;
+    margin:8px 0 10px;
+  }
+  .project-card p{color:#333844; font-size:15px; margin:0 0 16px;}
+  .project-card .feature-list{margin-top:auto;}
+  .project-card .eyebrow{color:var(--slate);}
+
+  .project-card.featured{
+    grid-column:1 / -1;
+    background:var(--teal-deep);
+    color:#F2F2EE;
+    border-color:var(--teal-deep);
+    padding:32px;
+  }
+  .project-card.featured .eyebrow{color:#9FD6CB;}
+  .project-card.featured h3{font-size:24px; margin:10px 0 14px;}
+  .project-card.featured p{color:#D8DEDA;}
+
+  .feature-list{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px;}
+  .feature-list span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    border:1px solid var(--line);
+    padding:5px 10px;
+    border-radius:100px;
+    color:var(--slate);
+  }
+  .featured .feature-list span{
+    border-color:rgba(255,255,255,0.25);
+    color:#EAF3F0;
+  }
+  .project-card.planned{background:transparent; border-style:dashed;}
+
+  /* EDUCATION */
+  .edu-item{
+    display:grid;
+    grid-template-columns:100px 1fr;
+    gap:18px;
+    padding:16px 0;
+    border-top:1px solid var(--line);
+  }
+  .edu-item:first-of-type{border-top:none;}
+  .edu-year{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--slate);
+    padding-top:2px;
+  }
+  .edu-title{font-weight:600; font-size:15.5px;}
+  .edu-sub{color:var(--slate); font-size:14.5px; margin-top:2px;}
+  @media (max-width:420px){
+    .edu-item{grid-template-columns:1fr; gap:4px;}
+  }
+
+  /* CONTACT */
+  .contact-layout{
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:40px;
+    align-items:start;
+  }
+  @media (max-width:720px){
+    .contact-layout{grid-template-columns:1fr; gap:32px;}
+  }
+  .contact-list{display:flex; flex-direction:column;}
+  .contact-row{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    padding:14px 0;
+    border-top:1px solid var(--line);
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .contact-row:first-child{border-top:none; padding-top:0;}
+  .contact-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--slate);
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+  }
+  .contact-value{font-size:15.5px; font-weight:500; overflow-wrap:anywhere;}
+  a.contact-row:hover .contact-value{color:var(--teal-deep);}
+
+  /* FORM */
+  .form-field{margin-bottom:18px;}
+  label{display:block; font-size:14px; font-weight:600; margin-bottom:6px;}
+  input, textarea{
+    width:100%;
+    font:inherit; font-size:15.5px;
+    color:var(--ink);
+    background:#fff;
+    border:1.5px solid rgba(20,23,31,0.22);
+    border-radius:10px;
+    padding:11px 14px;
+  }
+  textarea{resize:vertical; min-height:120px;}
+  input[aria-invalid="true"], textarea[aria-invalid="true"]{border-color:var(--error);}
+  .field-error{
+    color:var(--error);
+    font-size:13.5px;
+    margin:6px 0 0;
+    min-height:1.2em;
+  }
+  .form-status{
+    margin:16px 0 0;
+    font-size:14.5px;
+    color:var(--teal-deep);
+    font-weight:500;
+  }
+
+  footer{
+    padding:40px 0 60px;
+    font-size:13px;
+    color:var(--slate);
+    border-top:1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar" aria-label="Main">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Anchal Shetty</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap" id="top">
+
+  <!-- HERO -->
+  <header class="hero">
+    <span class="status"><span class="pulse-dot"></span>Open to internship opportunities</span>
+    <h1 class="name">Anchal Shetty</h1>
+    <p class="role">BCA student and aspiring software developer, Dr. B B Hegde First Grade College, Kundapura.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#projects">View my projects</a>
+      <a class="btn btn-ghost" href="#contact">Contact me</a>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <span class="eyebrow">Who I am</span>
+    <h2>About me</h2>
+    <p class="about-text">
+      I'm a Bachelor of Computer Applications student building a foundation across programming, data, and problem-solving.
+      My goal is to become a software developer.
+    </p>
+    <p class="about-text">
+      I'm looking for an internship where I can apply what I'm learning, pick up real-world experience, and grow
+      alongside a team.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <span class="eyebrow">What I work with</span>
+    <h2>Skills</h2>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <div class="skill-group-label">Programming & Tools</div>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Java</span>
+          <span class="tag">C Programming</span>
+          <span class="tag">C++ Programming</span>
+          <span class="tag">Apache Server</span>
+          <span class="tag">MS-Excel</span>
+          <span class="tag">MS-Word</span>
+          <span class="tag">MS-PowerPoint</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Working Style</div>
+        <div class="tags">
+          <span class="tag">Effective Communication</span>
+          <span class="tag">Teamwork</span>
+          <span class="tag">Time Management</span>
+          <span class="tag">English — Spoken</span>
+          <span class="tag">English — Written</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <span class="eyebrow">My work</span>
+    <h2>Projects</h2>
+    <div class="gallery">
+
+      <article class="project-card featured">
+        <span class="eyebrow">Apr – Jun 2026 · Presented at Project Expo 2026</span>
+        <h3>Shakthi — Women Safety Tool</h3>
+        <p>
+          Shakthi is a women's safety application designed to provide emergency support when it's needed most,
+          giving faster access to help and improving personal security in critical situations. I presented it at my
+          college's Project Expo, demonstrating its core features and walking faculty and visitors through how it works.
+        </p>
+        <div class="feature-list">
+          <span>SOS alerts</span>
+          <span>Live location sharing</span>
+          <span>Emergency contacts</span>
+          <span>Quick access to help</span>
+        </div>
+        <!-- Once Shakthi is on GitHub, add a link here:
+             <p><a href="YOUR_GITHUB_LINK" target="_blank" rel="noopener">View on GitHub</a></p> -->
+      </article>
+
+      <!-- Replace these two cards with real projects as you finish them.
+           Copy the card below, change the text, and remove the "planned" class. -->
+      <article class="project-card planned">
+        <span class="eyebrow">Planned</span>
+        <h3>Task manager app</h3>
+        <p>A to-do app to add, edit, delete, and filter tasks, saved in the browser.</p>
+        <div class="feature-list">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+      </article>
+
+      <article class="project-card planned">
+        <span class="eyebrow">Planned</span>
+        <h3>REST API</h3>
+        <p>A small backend API with routes, input validation, and error handling.</p>
+        <div class="feature-list">
+          <span>API design</span>
+          <span>Validation</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <span class="eyebrow">Background</span>
+    <h2>Education</h2>
+    <div class="edu-item">
+      <div class="edu-year">2024–2027</div>
+      <div>
+        <div class="edu-title">Bachelor of Computer Applications (BCA)</div>
+        <div class="edu-sub">Dr. B B Hegde First Grade College</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">2024</div>
+      <div>
+        <div class="edu-title">XII (Senior Secondary), Commerce</div>
+        <div class="edu-sub">Karnataka State Board · 92.16%</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">2022</div>
+      <div>
+        <div class="edu-title">X (Secondary)</div>
+        <div class="edu-sub">Karnataka State Board · 78.00%</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <span class="eyebrow">Get in touch</span>
+    <h2>Contact</h2>
+    <div class="contact-layout">
+
+      <div class="contact-list">
+        <a class="contact-row" href="mailto:anchalshetty184@gmail.com">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">anchalshetty184@gmail.com</span>
+        </a>
+        <a class="contact-row" href="https://www.linkedin.com/in/anchal-shetty-147347422" target="_blank" rel="noopener">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">/in/anchal-shetty</span>
+        </a>
+        <a class="contact-row" href="tel:+916360016210">
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">+91 63600 16210</span>
+        </a>
+        <div class="contact-row">
+          <span class="contact-label">Location</span>
+          <span class="contact-value">Kundapura, Karnataka</span>
+        </div>
+      </div>
+
+      <form id="contactForm" novalidate>
+        <div class="form-field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" autocomplete="name" aria-describedby="name-error" />
+          <p class="field-error" id="name-error" aria-live="polite"></p>
+        </div>
+        <div class="form-field">
+          <label for="email">Your email</label>
+          <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error" />
+          <p class="field-error" id="email-error" aria-live="polite"></p>
+        </div>
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" aria-describedby="message-error"></textarea>
+          <p class="field-error" id="message-error" aria-live="polite"></p>
+        </div>
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+
+    </div>
+  </section>
+
+  <footer>
+    Anchal Shetty · Built with a bit of AI help, 2026
+  </footer>
+</div>
+
+<script>
+  // ---------- Mobile menu ----------
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(open));
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // ---------- In-page links: scroll inside the page ----------
+  // Some previews resolve "#section" links against their own address,
+  // which opens the wrong page. This keeps the scrolling on this page.
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', event => {
+      const target = document.getElementById(link.getAttribute('href').slice(1));
+      if (target) {
+        event.preventDefault();
+        target.scrollIntoView();
+      }
+    });
+  });
+
+  // ---------- Highlight the current section in the navbar ----------
+  const sections = document.querySelectorAll('main section, section[id]');
+  const linkMap = {};
+  navLinks.querySelectorAll('a').forEach(a => { linkMap[a.getAttribute('href').slice(1)] = a; });
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && linkMap[entry.target.id]) {
+          Object.values(linkMap).forEach(a => a.classList.remove('active'));
+          linkMap[entry.target.id].classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(s => observer.observe(s));
+  }
+
+  // ---------- Contact form validation ----------
+  const form = document.getElementById('contactForm');
+  const statusEl = document.getElementById('formStatus');
+  const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  const rules = {
+    name: value => {
+      if (!value.trim()) return 'Enter your name.';
+      if (value.trim().length < 2) return 'Your name must be at least 2 characters.';
+      return '';
+    },
+    email: value => {
+      if (!value.trim()) return 'Enter your email address.';
+      if (!EMAIL_PATTERN.test(value.trim())) return 'Enter a valid email address, like name@example.com.';
+      return '';
+    },
+    message: value => {
+      if (!value.trim()) return 'Write a message.';
+      if (value.trim().length < 10) return 'Your message must be at least 10 characters.';
+      return '';
+    }
+  };
+
+  function validateField(field) {
+    const error = rules[field.name](field.value);
+    document.getElementById(field.name + '-error').textContent = error;
+    field.setAttribute('aria-invalid', error ? 'true' : 'false');
+    return !error;
+  }
+
+  Object.keys(rules).forEach(name => {
+    const field = form.elements[name];
+    field.addEventListener('blur', () => validateField(field));
+    field.addEventListener('input', () => {
+      if (field.getAttr
