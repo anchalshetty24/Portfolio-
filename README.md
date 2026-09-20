@@ -3,7 +3,7 @@
 A responsive personal portfolio built for the YR NOVATECH internship (Task 2).
 It presents my skills, projects, education, and contact details as a software developer.
 
-**Live site:**  https://anchalshetty24.github.io/Portfolio-/ 
+**Live site:**  https://anchalshetty24.github.io/Portfolio-/   
 **Repository:** https://anchalshetty24.github.io/Portfolio-/ 
 
 ## Sections
