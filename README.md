@@ -1,10 +1,10 @@
-# Portfolio-# Anchal Shetty — Portfolio Website
+# Anchal Shetty — Portfolio Website
 
 A responsive personal portfolio built for the YR NOVATECH internship (Task 2).
 It presents my skills, projects, education, and contact details as a software developer.
 
-**Live site:** _add your deployment URL here_
-**Repository:** _add your GitHub repo URL here_
+**Live site:** 
+**Repository:** 
 
 ## Sections
 
