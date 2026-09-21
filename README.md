@@ -12,7 +12,7 @@ It presents my skills, projects, education, and contact details as a software de
 - **Hero:** name, role, availability for internships, and links to Projects and Contact
 - **About:** who I am and what I'm looking for
 - **Skills:** programming, tools, and working-style skills as tags
-- **Projects gallery:** a featured project (Shakthi, a women's safety app presented at Project Expo 2026) and a card layout for adding more
+- **Projects gallery:** a featured project (Shakthi, a women's safety app presented at Project Expo 2026,task-manager) and a card layout for adding more
 - **Education:** BCA, XII, and X
 - **Contact:** email, LinkedIn, phone, and a form with validation
 
