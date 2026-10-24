@@ -3,8 +3,8 @@
 A responsive personal portfolio built for the YR NOVATECH internship.
 It presents my skills, projects, education, and contact details as a software developer.
 
-**Live site:**  https://anchalshetty24.github.io/Portfolio-/   
-**Repository:**  https://github.com/anchalshetty24/Portfolio-
+**Live site:** https://anchalshetty24.github.io/Portfolio-/
+**Repository:** https://github.com/anchalshetty24/Portfolio-
 
 ## Sections
 
@@ -12,9 +12,19 @@ It presents my skills, projects, education, and contact details as a software de
 - **Hero:** name, role, availability for internships, and links to Projects and Contact
 - **About:** who I am and what I'm looking for
 - **Skills:** programming, tools, and working-style skills as tags
-- **Projects gallery:** a featured project (Shakthi, a women's safety app presented at Project Expo 2026,task-manager) and a card layout for adding more
+- **Projects gallery:** a featured project (Shakthi, a women's safety app presented at Project Expo 2026), a task manager app, a REST API project, and a card layout for adding more
 - **Education:** BCA, XII, and X
 - **Contact:** email, LinkedIn, phone, and a form with validation
+
+## Projects
+
+- **Shakthi:** a women's safety app, built as a team project with Spoorthi Naik and presented at Project Expo 2026.
+  Team repository: https://github.com/naikspoorthi6-cloud/project-shakthi
+  My fork: https://github.com/anchalshetty24/project-shakthi
+- **Task Manager:** a to-do app to add, edit, delete, and filter tasks, saved in the browser.
+  Live app: https://anchalshetty24.github.io/task-manager/
+- **REST API:** a small backend API with routes, input validation, and error handling.
+  Link: https://anchalshetty24.github.io/rest-api/
 
 ## Tech
 
@@ -42,14 +52,22 @@ The site is static, so there's no server to receive form data. After validation 
 
 Open `index.html` in a browser. No setup needed.
 
-## Deploy on GitHub Pages
+## How it's deployed
 
-1. Create a new public repository on GitHub, for example `portfolio`.
+The site is hosted on GitHub Pages from the `main` branch (root folder) of this repository.
+
+To deploy your own copy:
+
+1. Create a new public repository on GitHub.
 2. Upload `index.html` and `README.md` to it.
 3. Go to **Settings → Pages**.
 4. Under **Build and deployment**, choose **Deploy from a branch**, select the `main` branch and the `/ (root)` folder, then save.
-5. After a minute or two, your site is live at `https://<your-username>.github.io/portfolio/`.
+5. After a minute or two, the site is live at `https://<your-username>.github.io/<repo-name>/`.
 
 ## Adding a new project
 
-In `index.html`, find the `<div class="gallery">` block, copy an existing `project-card`, and change the title, description, and tags. Remove the `planned` class once the project is done.
+In `index.html`, find the `<div class="gallery">` block, copy an existing `project-card`, and change the title, description, tags, and link. Add the `planned` class to a card while the project is still in progress, and remove it once the project is done.
+
+## Author
+
+Anchal V Shetty, BCA student (2024–2027), Dr. B B Hegde First Grade College, Kundapura.
